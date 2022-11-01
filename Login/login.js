@@ -3,7 +3,8 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
       document.getElementById("succLog").style.display = "block";
-      document.getElementById("logDiv").style.display = "none";      const uid = user.uid;
+      document.getElementById("logDiv").style.display = "none";     
+      const uid = user.uid;
       // ...
     } else {
       // User is signed out
