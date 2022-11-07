@@ -1,52 +1,222 @@
-.login-div, .successful-login{
-    width: 40%;
-    margin: 0px auto;
-    margin-top: 150px;
-    padding: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: larger;
-    text-align: center;
-}
-
-
-.login-div input{
- display: block;
- border: 1px solid #594D5B;
- border-radius: 6px;
- background-color: white;
- padding: 20px;
- outline: none;
- width: 100%;
- margin-bottom: 10px;
-}
-
-.login-div input:focus{
-    border: 1px solid #4c4c4c;
-}
-
-.login-div button{
-    background: #4d4c5c;
-    color: white;
-    border: 0px;
-    border-radius: 6px;
-    padding: 15px;
-    display: block;
+html, body {
     width: 100%;
+    height: 100%;
+    background: -webkit-linear-gradient(25deg, #4d4c5c, #59515E, #322D31, #41424C, #3f3f4e);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.login-div button:hover{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+
+#content_container {
+    width: 30%;
+    height: 35%;
+    position: absolute;
+    
+}
+
+#form_container {
+    width: 100%;
+    height: 100%;
+
+    background-color: white;
+    box-shadow: 0 0 50px -20px #000;
+    border-radius: 2%;
+
+    overflow: hidden;
+}
+
+#form_header_container {
+    width: 100%;
+    height: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+
+    padding: 20px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+    border-bottom: 1px solid transparent;
+    border-image: -webkit-linear-gradient(25deg, #4d4c5c, #59515E, #322D31, #41424C, #3f3f4e) 20;
     background: white;
-    color: #4d4c5c;
-    border: 1px solid #4d4c5c;
-    cursor: pointer;
 }
 
-.successful-login button{
-    background: #4d4c5c;
-    color: white;
-    border: 0px;
-    border-radius: 10px;
-    padding: 10px;
-    display: block;
-    width: 100%;
+#form_header {
+    display: inline-block;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+
+    background: -webkit-linear-gradient(25deg, #4d4c5c, #59515E, #322D31, #41424C, #3f3f4e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
 }
+
+#form_content_container {
+    width: 100%;
+    height: 90%;
+
+    float: left;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 30px;
+}
+
+#form_content_inner_container {
+    width: 75%;
+    height: 100%;
+
+    float: left;
+
+}
+
+
+input {
+    width: 100%;
+    height: 40px;
+
+    padding-left: 10px;
+    margin-bottom: 20px;
+
+    background: white;
+    font-size: 12px;
+
+    border-bottom: 2px solid transparent;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+    border-image: -webkit-linear-gradient(25deg, #4d4c5c, #59515E, #2b0e25, #41424C, #3f3f4e) 1;
+}
+
+#button_container {
+    width: 100%;
+    height: 10%;
+
+    background-image: linear-gradient(80deg, #4d4c5c, #59515E, #322D31, #41424C, #3f3f4e);
+    color: #fff;
+
+    float: left;
+
+    margin-top: 5px;
+}
+
+#button_container button {
+    width: 50%;
+    height: 100%;
+    float: left;
+
+    background: transparent;
+    color: inherit;
+
+    font-family: Montserrat;
+    letter-spacing: 1px;
+    font-weight: 900;
+    font-size: 12px;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  nav{
+    background: #9897a9;
+    height: 80px;
+    width: 100%;
+  }
+  label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  nav ul li a{
+    color: white;
+    font-size: 20px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  a.active,a:hover{
+  background: white;
+      color: #4d4c5c;
+      border: 1px solid #4d4c5c;
+      cursor: pointer;
+  }
+  @media (max-width: 952px){
+    label.logo{
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a{
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 858px){
+    .checkbtn{
+      display: block;
+    }
+    ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+      font-size: 20px;
+    }
+    a:hover,a.active{
+      background: none;
+      color: #0082e6;
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+  }
