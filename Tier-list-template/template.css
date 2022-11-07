@@ -138,7 +138,31 @@
     margin-top: 1px;
     margin-bottom: 5px;
   }
-  #list-info{
+  #list-info, .inventory{
     margin: auto;
     width: 50%;
+  }
+  .utility{
+    margin:auto;
+    margin-top:20px;
+    margin-bottom:30px;
+    
+    width:50%;
+    display:inline-block;
+  }
+  .u-button{
+    background: #4d4c5c;
+    color: white;
+    text-align:center;
+    border: 0px;
+    border-radius: 6px;
+    padding: 15px;
+    display: inline-block;
+    width: 20%;
+  }
+  .u-button:hover{
+    background: white;
+    color: #4d4c5c;
+    border: 1px solid #4d4c5c;
+    cursor: pointer;
   }
