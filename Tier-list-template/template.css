@@ -169,7 +169,7 @@
 #inventory{
   display: flex;
       margin: auto;
-      flex-direction: column;
+      flex-direction: row;
       width: 50%;
       height: auto;
       min-height: 100px;
