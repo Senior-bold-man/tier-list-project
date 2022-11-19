@@ -1,48 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Login | Rankr</title>
-<link href="style.css" rel="stylesheet"> 
-</head>
+    <head>
+        <title>Welcome to Rankr</title>
+        <link rel="stylesheet"  href="style.css">
+    </head>
+    <body>
+      <nav>
+      </label>
+      <label class="logo">Rankr</label>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Register</a></li>
+      </ul>
+    </nav>
+      <div id="content_container">
+            <div id="form_container">
+                <div id="form_header_container">
+                    <h2 id="form_header"> Welcome to Rankr </h2>
+                </div>
 
-<body>
-<div class ="login-div" id ="logDiv">
-    <h2>Welcome to Rankr</h2>
-    <input type="email" placeholder = "Email" id = "userEmail"/>
-    <input type="password" placeholder = "Password" id="userPassword"/>
-    <button onclick="login()">Login!</button>
-</div>
+                <div id="form_content_container">
+                    <div id="form_content_inner_container">
+                        <input type="text" id="username" placeholder="Username">
+                        <input type="email" id="email" placeholder="Email">
+                        <input type="password" id="password" placeholder="Password"> 
 
-<div id ="succLog" class ="successful-login">
-    <h2>Welcome @user</h2>
-    <p>You are currently logged in!</p>
-    <button>Logout</button>
+                        <div id="button_container">
+                            <button onclick="login()">Login</button>
+                            <button onclick="register()">Register</button>
+                        </div>
 
-</div>
-</body>
+                    </div>
+                </div>
+        </div>
+      </div>  
 
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyCFzO1UN4vuZYDXHRqXWUff5ID9z7_LTlw",
-      authDomain: "tier-list-project-82209.firebaseapp.com",
-      projectId: "tier-list-project-82209",
-      storageBucket: "tier-list-project-82209.appspot.com",
-      messagingSenderId: "229212445670",
-      appId: "1:229212445670:web:4db9622673c7f294a81427",
-      measurementId: "G-J4SQQT91JB"
-    };
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  </script>
-<script src= "login.js"></script>
+      <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyCFzO1UN4vuZYDXHRqXWUff5ID9z7_LTlw",
+          authDomain: "tier-list-project-82209.firebaseapp.com",
+          projectId: "tier-list-project-82209",
+          storageBucket: "tier-list-project-82209.appspot.com",
+          messagingSenderId: "229212445670",
+          appId: "1:229212445670:web:82f6ecd43b6b1594a81427",
+          measurementId: "G-EFN7TY2R2X"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+    </body>
+    <script src="login.js"></script>
+
 </html>
