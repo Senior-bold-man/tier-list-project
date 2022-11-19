@@ -81,87 +81,13 @@
     }
   }
   body{
-      margin: 0px;
-      font-family: 'Courier New', Courier, monospace;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    background: -webkit-linear-gradient(25deg, #4d4c5c, #59515E, #322D31, #41424C, #3f3f4e);
   }
-  
-  #tier-list{
-      display: flex;
-      margin: auto;
-      flex-direction: column;
-      width: 50%;
-      height: 80vh;
-      background-color: #232023;
-      align-items: center;
-      justify-content: space-between;
-      padding: 5px;
-      margin-left: auto;
-      margin-top: 20px;
-  }
-  
-  .row{
-      display: flex;
-      width: 100%;
-      height: 13%;
-      background-color: #59515E;
-  }
-  
-  .label{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      width: 100px;
-      background-color: aqua;
-  }
-  
-  .card{
-      height: 104px;
-      width: 104px;
-      background-color: wheat;
-      display: flex;
-  }
-  .description{
-    width: 50vw;
-    height: auto;
-    padding: 0;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  .list-name, .list-creator{
-    width: 50vw;
-    height: auto;
-    padding: 0;
-    margin-top: 1px;
-    margin-bottom: 5px;
-  }
-  #list-info, .inventory{
-    margin: auto;
-    width: 50%;
-  }
-  .utility{
-    margin:auto;
-    margin-top:20px;
-    margin-bottom:30px;
-    
-    width:50%;
-    display:inline-block;
-  }
-  .u-button{
-    background: #4d4c5c;
-    color: white;
-    border: 0px;
-    border-radius: 6px;
-    padding: 15px;
+  .main-content{
+    background-color: white;
     display: inline-block;
-    width: 20%;
-  }
-  .u-button:hover{
-    background: white;
-    color: #4d4c5c;
-    border: 1px solid #4d4c5c;
-    cursor: pointer;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom:50px;
   }
