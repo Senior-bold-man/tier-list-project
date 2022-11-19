@@ -119,8 +119,8 @@
   }
   
   .card{
-      height: 104px;
-      width: 104px;
+      height: 100px;
+      width: 100px;
       background-color: wheat;
       display: flex;
   }
@@ -165,3 +165,18 @@
     border: 1px solid #4d4c5c;
     cursor: pointer;
   }
+
+#inventory{
+  display: flex;
+      margin: auto;
+      flex-direction: column;
+      width: 50%;
+      height: auto;
+      min-height: 100px;
+      background-color: #232023;
+      align-items: right;
+      justify-content: flex-start;
+      padding: 5px;
+      margin-left: auto;
+      margin-top: 20px;
+}
