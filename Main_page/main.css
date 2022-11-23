@@ -85,13 +85,14 @@
   }
   .main-content{
     background-color: white;
-    display: flex;
-    flex-direction: row;
-    margin: 50px;
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    margin-top: 50px;
     margin-bottom: 0px;
     justify-content: space-evenly;
-    align-items: flex-end;
     width: auto;
+    margin-right,margin-right: auto;
+    width: 80vw;
   }
 
 .sample{
@@ -99,4 +100,5 @@
   width: 300px;
   height: 150px;
   display: inline-block;
+  object-fit:
 }
