@@ -85,13 +85,12 @@
   }
   .main-content{
     background-color: white;
-    display: inline-grid;
+    display: grid;
     grid-template-columns: auto auto auto;
+    margin:auto;
     margin-top: 50px;
     margin-bottom: 0px;
     justify-content: space-evenly;
-    width: auto;
-    margin-right,margin-right: auto;
     width: 80vw;
   }
 
@@ -100,5 +99,5 @@
   width: 300px;
   height: 150px;
   display: inline-block;
-  object-fit:
+  object-fit: cover;
 }
