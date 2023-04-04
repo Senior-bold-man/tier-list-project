@@ -31,7 +31,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.get('/',checkAuthenticated,(req,res)=>{
-    res.render('index.ejs',{name: req.user.username})
+    res.render('index.ejs',{username: req.user.username})
 })
 
 app.get('/login',checkNotAuthenticated,(req,res)=>{
