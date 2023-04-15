@@ -9,12 +9,32 @@ const passport = require('passport')
 const flash = require('express-flash')
 const session = require('express-session')
 const path = require('path')
+const dotenv = require('dotenv').config()
+const mongoose = require('mongoose')
 
-const initializePassport = require('./passport-config')
-initializePassport(passport, 
-    email => users.find(user => user.email === email),
-    id => users.find(user => user.id === id),
-)
+mongoose.connect("mongodb+srv://Admin:admin@cluster0.szfhoky.mongodb.net/?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("Connection to Database Successful"))
+  .catch((error) => console.log(error));
+
+const userSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true }
+  });
+
+const User = mongoose.model('User', userSchema);
+
+const initializePassport = require('./passport-config');
+initializePassport(passport, User, 
+  async email => {
+    const user = await User.findOne({ email: email });
+    return user;
+  },
+  async id => {
+    const user = await User.findById(id);
+    return user;
+  }
+);
 
 const users = []
 
@@ -24,14 +44,18 @@ app.use(express.urlencoded({extended: false}))
 app.use(flash())
 app.use(session({
     secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 24 * 60 * 60 * 1000, // 1 day
+    secure: process.env.NODE_ENV === 'production'
+  }
 }))
 app.use(passport.initialize())
 app.use(passport.session())
 
 app.get('/',checkAuthenticated,(req,res)=>{
-    res.render('index.ejs',{username: req.user.username})
+    res.render('index.ejs',{username: req.user.name})
 })
 
 app.get('/login',checkNotAuthenticated,(req,res)=>{
@@ -49,19 +73,18 @@ app.get('/register',checkNotAuthenticated,(req,res)=>{
 })
 
 app.post('/register',checkNotAuthenticated,async (req, res)=>{
-    try{
-        const hashedPassword = await bcrypt.hash(req.body.password, 10)
-        users.push({
-            id: Date.now().toString(),
-            name: req.body.username,
-            email: req.body.email,
-            password: hashedPassword
-        })
-        res.redirect('/login')
-    }catch{
-        res.redirect('/register')
-    }
-    console.log(users)
+    try {
+        const hashedPassword = await bcrypt.hash(req.body.password, 10);
+        const user = new User({
+          name: req.body.username,
+          email: req.body.email,
+          password: hashedPassword
+        });
+        await user.save();
+        res.redirect('/login');
+      } catch {
+        res.redirect('/register');
+      }
 })
 
 function checkAuthenticated(req,res,next){
@@ -79,4 +102,4 @@ function checkNotAuthenticated(req, res, next) {
     next()
 }
 
-app.listen(3000)
+app.listen(4000)
