@@ -119,10 +119,13 @@
   }
   
   .card{
-      height: 100px;
-      width: 100px;
-      background-color: wheat;
-      display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85px;
+    width: 100px;
+    background-color: white;
+    font-size: 50px;
   }
   .description{
     width: 50vw;
