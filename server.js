@@ -12,7 +12,7 @@ const path = require('path')
 const dotenv = require('dotenv').config()
 const mongoose = require('mongoose')
 
-mongoose.connect("mongodb+srv://Admin:admin@cluster0.szfhoky.mongodb.net/?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connection to Database Successful"))
   .catch((error) => console.log(error));
 
