@@ -21,7 +21,7 @@ function updateDocument() {
     const collectionFruit = db.collection('objects');
 
     // Find the document with the id of the user.
-    collectionPeople.findOne({ id: 1 }, function (err, document) {
+    collectionPeople.findOne({ id }, function (err, document) {
       if (err) {
         console.log(err);
         return;
@@ -35,7 +35,7 @@ function updateDocument() {
 
       // If the "done this tier list" column is false, update the document and set it to true.
       if (document[__v] === 0) {
-        collectionPeople.updateOne({ id: 1 }, { $set: { __v: 1 } }, function (err, result) {
+        collectionPeople.updateOne({ id }, { $set: { __v: 1 } }, function (err, result) {
           if (err) {
             console.log(err);
             return;
@@ -72,7 +72,7 @@ async function updateFruitScore(collectionFruit) {
       const fruitName = fruitElement.id;
 
       // Increment the score for the fruit based on the row's number.
-      await collection.updateOne(
+      await collectionFruit.updateOne(
         { fruit: fruitName },
         {
           $inc: {
